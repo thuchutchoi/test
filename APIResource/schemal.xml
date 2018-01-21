@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: http://wwwsqldesigner.local/ -->
+<sql>
+   <datatypes db="mssql">
+      <group label="Integer" color="rgb(238,238,170)">
+         <type label="TinyInt" length="0" sql="tinyint" re="INT" quote="" bytes="1" note="Integer data: 0 to 255" />
+         <type label="SmallInt" length="0" sql="smallint" re="INT" quote="" bytes="2" note="Integer data: -32,768 to 32,767" />
+         <type label="Int" length="0" sql="int" re="INT" quote="" bytes="4" note="Integer data: -2,147,483,648 to 2,147,483,647" />
+         <type label="BigInt" length="0" sql="bigint" re="INT" quote="" bytes="8" note="Integer data: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807" />
+      </group>
+      <group label="Monetary" color="rgb(238,238,170)">
+         <type label="Money" length="0" sql="money" re="FLOAT" quote="" bytes="8" note="Integer data: -922,337,203,685,477.5808 to 922,337,203,685,477.5807" />
+         <type label="SmallMoney" length="0" sql="smallmoney" re="FLOAT" quote="" bytes="4" note="-214,748.3648 to 214,748.3647" />
+      </group>
+      <group label="Numeric" color="rgb(238,238,170)">
+         <type label="Real" length="0" sql="real" re="FLOAT" quote="" bytes="4" note="Floating precision number data: -3.402823E+38 to 3.402823E+38" />
+         <type label="Float" length="0" sql="float" re="FLOAT" quote="" bytes="8" note="Floating precision number data: -4.94E+324 to 4.94E+324" />
+         <type label="Decimal" length="1" sql="decimal" re="DEC" quote="" bytes="n*" note="Fixed precision and scale numeric data: -10^38 +1 to 10^38 -1 (decimal and numeric are synonyms)" />
+         <type label="Numeric" length="1" sql="numeric" re="DEC" quote="" bytes="n*" note="Fixed precision and scale numeric data: -10^38 +1 to 10^38 -1 (decimal and numeric are synonyms)" />
+      </group>
+      <group label="Character" color="rgb(255,200,200)">
+         <type label="Char" length="0" sql="char" quote="'" bytes="n" note="Fixed-length character data with a maximum length of 8,000 characters" />
+         <type label="Varchar" length="1" sql="varchar" quote="'" bytes="m &lt;= n" note="Variable-length data with a maximum of 8,000 characters" />
+         <type label="Text" length="1" sql="text" quote="'" bytes="&lt;= 2,147,483,647" note="Variable-length data with a maximum length of 2,147,483,647 characters" />
+         <type label="XML" length="0" sql="xml" quote="'" bytes="n" note="XML" />
+      </group>
+      <group label="Unicode Character" color="rgb(255,200,200)">
+         <type label="nChar" length="0" sql="nchar" quote="'" bytes="n" note="Fixed-length Unicode data with a maximum length of 4,000 characters" />
+         <type label="nVarchar" length="1" sql="nvarchar" quote="'" bytes="m &lt;= n" note="Variable-length Unicode data with a maximum length of 4,000 characters" />
+         <type label="nText" length="1" sql="ntext" quote="'" bytes="&lt;= 2,147,483,647" note="Variable-length Unicode data with a maximum length of 1,073,741,823 characters" />
+      </group>
+      <group label="Date &amp; Time" color="rgb(200,255,200)">
+         <type label="Datetime" length="0" sql="datetime" quote="" bytes="8" note="Jan 1, 1753 to Dec 31, 9999" />
+         <type label="SmallDateTime" length="0" sql="smalldatetime" quote="" bytes="4" note="Jan 1, 1900 to Dec 31, 2079" />
+      </group>
+      <group label="Binary" color="rgb(200,200,255)">
+         <type label="Binary" length="0" sql="binary" quote="'" bytes="n" note="Fixed-length binary data with a maximum length of 8,000 bytes" />
+         <type label="Varbinary" length="1" sql="varbinary" quote="'" bytes="m &lt;= n" note="Variable-length binary data with a maximum length of 8,000 bytes" />
+      </group>
+      <group label="Miscellaneous" color="rgb(200,220,255)">
+         <type label="Bit" length="0" sql="bit" quote="" bytes="1" note="Boolean: 1 or 0" />
+         <type label="Image" length="1" sql="image" re="BLOB" quote="" bytes="0 to 2,147,483,647" note="Variable-length binary data with a maximum length of 2,147,483,647 bytes" />
+         <type label="Timestamp" length="0" sql="timestamp" quote="" bytes="8" note="Locally unique binary number updated as a row gets updated" />
+         <type label="SQL Variant" length="1" sql="sql_variant" quote="" bytes="" note="Stores any datatype except text, ntext, image, timestamp" />
+         <type label="Uniqueidentifier" length="1" sql="uniqueidentifier" quote="" bytes="16" note="GUID" />
+      </group>
+   </datatypes>
+   <table x="450" y="301" name="EquipmentInfo">
+      <row name="equipment_info_id" null="0" autoincrement="0">
+         <datatype>nvarchar(36)</datatype>
+         <default>'NULL'</default>
+         <comment>管理番号</comment>
+      </row>
+      <row name="name" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>設備名</comment>
+      </row>
+      <row name="model" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>形式</comment>
+      </row>
+      <row name="serial_number" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>製品番号</comment>
+      </row>
+      <row name="manufacturer_name" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>メーカ名</comment>
+      </row>
+      <row name="replacement_date" null="1" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>最終部品交換日</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>equipment_info_id</part>
+      </key>
+      <comment>設備情報</comment>
+   </table>
+   <table x="778" y="25" name="MaintenancePlan">
+      <row name="maintenance_plan_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>計画ID</comment>
+      </row>
+      <row name="equipment_id" null="0" autoincrement="0">
+         <datatype>nvarchar(36)</datatype>
+         <default>'NULL'</default>
+         <relation table="EquipmentInfo" row="equipment_info_id" />
+         <comment>管理番号</comment>
+      </row>
+      <row name="inspection_year" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>点検年度</comment>
+      </row>
+      <row name="inspection_month" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>点検月</comment>
+      </row>
+      <row name="inspection_done" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>点検項目・完了数</comment>
+      </row>
+      <row name="inspection_total" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>点検項目・数</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>maintenance_plan_id</part>
+      </key>
+      <comment>保全計画情報</comment>
+   </table>
+   <table x="827" y="1419" name="UserInfo">
+      <row name="user_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>ユーザID</comment>
+      </row>
+      <row name="role_id" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserRole" row="role_id" />
+         <comment>ロールID</comment>
+      </row>
+      <row name="username" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>ログインユーザ名</comment>
+      </row>
+      <row name="password" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>パスワード</comment>
+      </row>
+      <row name="firstname_kanji" null="0" autoincrement="0">
+         <datatype>nvarchar(100)</datatype>
+         <default>'NULL'</default>
+         <comment>ユーザ名：漢字（性）</comment>
+      </row>
+      <row name="lastname_kanji" null="0" autoincrement="0">
+         <datatype>nvarchar(100)</datatype>
+         <default>'NULL'</default>
+         <comment>ユーザ名：漢字（名）</comment>
+      </row>
+      <row name="firstname_katakana" null="0" autoincrement="0">
+         <datatype>nvarchar(100)</datatype>
+         <default>'NULL'</default>
+         <comment>ユーザ名：カナ（性）</comment>
+      </row>
+      <row name="lastname_katakana" null="0" autoincrement="0">
+         <datatype>nvarchar(100)</datatype>
+         <default>'NULL'</default>
+         <comment>ユーザ名：カナ（名）</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>user_id</part>
+      </key>
+      <comment>ユーザ情報</comment>
+   </table>
+   <table x="152" y="2052" name="UserRole">
+      <row name="role_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>ロールID</comment>
+      </row>
+      <row name="role_name" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>ロールID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>role_id</part>
+      </key>
+      <comment>ユーザー役割</comment>
+   </table>
+   <table x="153" y="2203" name="SyncHistory">
+      <row name="sync_history_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>更新履歴ID</comment>
+      </row>
+      <row name="user_id" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="type" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>送受信タイプ (1: データ送信 0: データ受信)</comment>
+      </row>
+      <row name="status" null="1" autoincrement="0">
+         <datatype>smallint</datatype>
+         <default>1</default>
+         <comment>ステータス(1: ペンディング 2: 成功 3: 失敗)</comment>
+      </row>
+      <row name="device_id" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>タブレットID</comment>
+      </row>
+      <row name="last_update" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>最終更新日</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>sync_history_id</part>
+      </key>
+      <comment>データ連携更新履歴</comment>
+   </table>
+   <table x="171" y="67" name="PartInfo">
+      <row name="part_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>部品ID</comment>
+      </row>
+      <row name="equipment_id" null="0" autoincrement="0">
+         <datatype>nvarchar(36)</datatype>
+         <default>'NULL'</default>
+         <relation table="EquipmentInfo" row="equipment_info_id" />
+         <comment>設備管理番号</comment>
+      </row>
+      <row name="name" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>部品名</comment>
+      </row>
+      <row name="model" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>形式</comment>
+      </row>
+      <row name="serial_number" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>製品番号</comment>
+      </row>
+      <row name="noted" null="1" autoincrement="0">
+         <datatype>ntext</datatype>
+         <default>NULL</default>
+         <comment>備考</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ (1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>part_id</part>
+      </key>
+      <comment>部品情報</comment>
+   </table>
+   <table x="201" y="594" name="EquipmentSpecInfo">
+      <row name="equipment_spec_info_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>ID</comment>
+      </row>
+      <row name="equipment_id" null="0" autoincrement="0">
+         <datatype>nvarchar(36)</datatype>
+         <default>'NULL'</default>
+         <relation table="EquipmentInfo" row="equipment_info_id" />
+         <comment>管理番号</comment>
+      </row>
+      <row name="name" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>項目名</comment>
+      </row>
+      <row name="specification" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>仕様</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>equipment_spec_info_id</part>
+      </key>
+      <comment>設備仕様情報</comment>
+   </table>
+   <table x="844" y="389" name="InspectionItemLarge">
+      <row name="inspection_item_large_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>作業番号</comment>
+      </row>
+      <row name="equipment_id" null="0" autoincrement="0">
+         <datatype>nvarchar(36)</datatype>
+         <default>'NULL'</default>
+         <relation table="EquipmentInfo" row="equipment_info_id" />
+         <comment>管理番号</comment>
+      </row>
+      <row name="sort" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>項目名</comment>
+      </row>
+      <row name="name" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>項目名</comment>
+      </row>
+      <row name="period" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>周期(1ヶ月、3ヶ月、1週間などの文字列)</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>inspection_item_large_id</part>
+      </key>
+      <comment>点検項目大</comment>
+   </table>
+   <table x="1301" y="100" name="InspectionItemSmall">
+      <row name="inspection_item_small_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>作業番号</comment>
+      </row>
+      <row name="inspection_large_id" null="1" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="InspectionItemLarge" row="inspection_item_large_id" />
+         <comment>作業番号</comment>
+      </row>
+      <row name="type" null="0" autoincrement="0">
+         <datatype>smallint</datatype>
+         <default>'NULL'</default>
+         <comment>点検項目種別</comment>
+      </row>
+      <row name="min" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>判定値＿最小</comment>
+      </row>
+      <row name="max" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>判定値＿最大</comment>
+      </row>
+      <row name="sort" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>表示順序</comment>
+      </row>
+      <row name="name" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>項目名</comment>
+      </row>
+      <row name="unit" null="0" autoincrement="0">
+         <datatype>nvarchar(10)</datatype>
+         <default>'NULL'</default>
+         <comment>単位</comment>
+      </row>
+      <row name="description" null="0" autoincrement="0">
+         <datatype>ntext</datatype>
+         <default>'NULL'</default>
+         <comment>説明</comment>
+      </row>
+      <row name="upper_error_message" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>上限異常メッセージ(上限値＜測定値： ”点検項目名” ＋ 上限異常 （温度の場合：”温度上限異常”）)</comment>
+      </row>
+      <row name="lower_error_message" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>下限異常メッセージ(測定値＜下限値： ”点検項目名” ＋ 下限異常 （回転数の場合：”回転数下限異常）)</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ 1: 削除済 0: 未削除</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>inspection_item_small_id</part>
+      </key>
+      <comment>点検項目小</comment>
+   </table>
+   <table x="1353" y="500" name="InspectionPlan">
+      <row name="inspection_plan_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>ID</comment>
+      </row>
+      <row name="maintenance_plan_id" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="MaintenancePlan" row="maintenance_plan_id" />
+         <comment>計画ID</comment>
+      </row>
+      <row name="work_number" null="1" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>作業番号</comment>
+      </row>
+      <row name="type" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>NULL</default>
+         <comment>点検種別(0: 修理修繕 1： 点検項目)</comment>
+      </row>
+      <row name="repair_item" null="1" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>修理修繕項目(修理修繕の場合のみ、設定される)</comment>
+      </row>
+      <row name="issue_id" null="1" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="IssueInfo" row="issue_info_id" />
+         <comment>懸案番号(修理修繕の場合のみ、設定される)</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>inspection_plan_id</part>
+      </key>
+      <comment>点検作業計画</comment>
+   </table>
+   <table x="1355" y="903" name="InspectionPlanDetail">
+      <row name="inspection_plan_detail_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>点検ID</comment>
+      </row>
+      <row name="inspection_plan_id" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="InspectionPlan" row="inspection_plan_id" />
+         <comment>作業番号(点検項目の作業番号または修正修繕ID)</comment>
+      </row>
+      <row name="assignee_id" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作業担当者(ユーザID)</comment>
+      </row>
+      <row name="work_content" null="0" autoincrement="0">
+         <datatype>ntext</datatype>
+         <default>'NULL'</default>
+         <comment>作業内容</comment>
+      </row>
+      <row name="urgency" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="Common" row="common_id" />
+         <comment>緊急度</comment>
+      </row>
+      <row name="scheduled_date" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作業予定日</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>inspection_plan_detail_id</part>
+      </key>
+      <comment>点検作業計画詳細</comment>
+   </table>
+   <table x="830" y="823" name="InspectionResult">
+      <row name="inspection_result_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>作業番号</comment>
+      </row>
+      <row name="inspection_detail_id" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="InspectionPlanDetail" row="inspection_plan_detail_id" />
+         <comment>点検計画詳細ID(点検計画詳細のID)</comment>
+      </row>
+      <row name="worker_id" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作業担当者(ユーザID)</comment>
+      </row>
+      <row name="status" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>NULL</default>
+         <comment>ステータス(0: 未完了 1：完了)</comment>
+      </row>
+      <row name="work_result" null="0" autoincrement="0">
+         <datatype>ntext</datatype>
+         <default>'NULL'</default>
+         <comment>作業内容</comment>
+      </row>
+      <row name="working_date" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作業実施日</comment>
+      </row>
+      <row name="working_starttime" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>開始日時(修繕の場合、登録する項目)</comment>
+      </row>
+      <row name="working_endtime" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>終了日時(修繕の場合、登録する項目)</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ (1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>inspection_result_id</part>
+      </key>
+      <comment>点検結果</comment>
+   </table>
+   <table x="1303" y="1603" name="InspectionResultData">
+      <row name="inspection_result_data_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>点検結果データID</comment>
+      </row>
+      <row name="inspection_result_id" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="InspectionResult" row="inspection_result_id" />
+         <comment>点検結果ID</comment>
+      </row>
+      <row name="inspection_small_id" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="InspectionItemSmall" row="inspection_item_small_id" />
+         <comment>点検項目小ID</comment>
+      </row>
+      <row name="status" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>NULL</default>
+         <comment>ステータス（1: 良、0: 否）</comment>
+      </row>
+      <row name="measured_value" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>測定値</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ (1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>inspection_result_data_id</part>
+      </key>
+      <comment>点検結果データ</comment>
+   </table>
+   <table x="202" y="901" name="IssueInfo">
+      <row name="issue_info_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>作業番号</comment>
+      </row>
+      <row name="title" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>タイトル</comment>
+      </row>
+      <row name="urgency" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="Common" row="common_id" />
+         <comment>緊急度</comment>
+      </row>
+      <row name="contents" null="0" autoincrement="0">
+         <datatype>ntext</datatype>
+         <default>'NULL'</default>
+         <comment>内容</comment>
+      </row>
+      <row name="expected_date" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>'NULL'</default>
+         <comment>対応予定日</comment>
+      </row>
+      <row name="work_number" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>作業番号</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>issue_info_id</part>
+      </key>
+      <comment>懸案情報</comment>
+   </table>
+   <table x="151" y="1604" name="ComponentReplacement">
+      <row name="component_replacement_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>ID</comment>
+      </row>
+      <row name="inspection_result_id" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="InspectionResult" row="inspection_result_id" />
+         <comment>点検ID</comment>
+      </row>
+      <row name="part_id_after" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="PartInfo" row="part_info_id" />
+         <comment>部品ID</comment>
+      </row>
+      <row name="part_id_before" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="PartInfo" row="part_info_id" />
+         <comment>部品ID</comment>
+      </row>
+      <row name="model_after" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>変更後ー形式</comment>
+      </row>
+      <row name="model_before" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>変更前ー形式</comment>
+      </row>
+      <row name="serial_no_after" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>変更後ー製品番号</comment>
+      </row>
+      <row name="serial_no_before" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>変更前ー製品番号</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>component_replacement_id</part>
+      </key>
+      <comment>部品交換</comment>
+   </table>
+   <table x="1301" y="2002" name="Attachment">
+      <row name="attachment_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>添付ID</comment>
+      </row>
+      <row name="inspection_result_id" null="1" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="InspectionResult" row="inspection_result_id" />
+         <comment>点検結果ID</comment>
+      </row>
+      <row name="inspection_result_data_id" null="1" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="InspectionResultData" row="inspection_result_data_id" />
+         <comment>点検結果データID</comment>
+      </row>
+      <row name="type" null="0" autoincrement="0">
+         <datatype>smallint</datatype>
+         <default>NULL</default>
+         <comment>添付種別(0: video, 1: image, 2: other)</comment>
+      </row>
+      <row name="url" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>添付URL</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>attachment_id</part>
+      </key>
+      <comment>作業実績ー添付</comment>
+   </table>
+   <table x="299" y="1304" name="Common">
+      <row name="common_id" null="0" autoincrement="1">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <comment>ID</comment>
+      </row>
+      <row name="type" null="0" autoincrement="0">
+         <datatype>smallint</datatype>
+         <default>0</default>
+         <comment>種別(将来的に追加される予定ですが、現在以下のデータのみ 0: 緊急度)</comment>
+      </row>
+      <row name="value" null="0" autoincrement="0">
+         <datatype>nvarchar(255)</datatype>
+         <default>'NULL'</default>
+         <comment>値</comment>
+      </row>
+      <row name="is_deleted" null="0" autoincrement="0">
+         <datatype>bit</datatype>
+         <default>0</default>
+         <comment>削除フラグ(1: 削除済 0: 未削除)</comment>
+      </row>
+      <row name="created_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>作成日時</comment>
+      </row>
+      <row name="created_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>作成ユーザID</comment>
+      </row>
+      <row name="updated_at" null="0" autoincrement="0">
+         <datatype>datetime</datatype>
+         <default>NULL</default>
+         <comment>更新日時</comment>
+      </row>
+      <row name="updated_by" null="0" autoincrement="0">
+         <datatype>int</datatype>
+         <default>NULL</default>
+         <relation table="UserInfo" row="user_id" />
+         <comment>更新ユーザID</comment>
+      </row>
+      <key type="PRIMARY" name="">
+         <part>common_id</part>
+      </key>
+      <comment>汎用情報</comment>
+   </table>
+</sql>
